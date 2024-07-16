@@ -51,6 +51,8 @@ abline(chestModel)
 summary.lm(chestModel)
 ```
 
+Adjusted $r^2$ for the chest model = 0.79, this is greater than the adjusted $r^2$ for neck, so this model is better then the neck model.
+
 ## length based on sex 
 
 ```{r}
@@ -70,9 +72,17 @@ abline(headlengthModel)
 summary.lm(headlengthModel)
 ```
 
-Adjusted $r^2$ for the head length model = 0.84, this is more than the adjusted $r^2$ for neck, so this model is better then the neck model.
+Adjusted $r^2$ for the head length model = 0.84, this is greater than the adjusted $r^2$ for neck, so this model is better then the neck model.
 
+## length based on head width
 
+```{r}
+headwidthModel <- lm(LENGTH~HEADWTH,data=bears)
+plot(LENGTH~HEADWTH,data=bears)
+abline(headwidthModel)
+summary.lm(headwidthModel)
+```
 
+Adjusted $r^2$ for the head width model = 0.53, this is less than the adjusted $r^2$ for neck, so this model is not as good as the neck model.
 
 
